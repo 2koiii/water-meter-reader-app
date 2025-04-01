@@ -1,0 +1,33 @@
+#:kivy 2.3.1
+
+<MainLayout>:
+	orientation: 'vertical'
+	padding: 20
+	spacing: 20
+	canvas.before:
+		Color:
+			rgba: 1, 1, 1, 1
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+	Label:
+		id: title_label
+		text: "My Android App"
+		font_size: '24sp'
+		size_hint_y: None
+		height: self.texture_size[1] + 20
+		halign: 'center'
+		valign: 'middle'
+		color: 0, 0, 0, 1
+
+	Button:
+		text: "Import"
+		size_hint_y: None
+		height: 60
+		font_size: '20sp'
+		on_release: app.import_action(self)
+		halign: 'center'
+		valign: 'middle'
+		size_hint_x: .8
+		pos_hint: {'center_x': .5}
